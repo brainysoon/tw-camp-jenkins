@@ -23,7 +23,7 @@ pipeline {
             }
             steps {
                 echo 'Deploying..'
-                sh './gradlew bootRun'
+                sh './deploy.sh'
             }
         }
     }
