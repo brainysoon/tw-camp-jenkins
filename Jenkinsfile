@@ -1,7 +1,21 @@
-node {
-    echo 'Hello Jenkins Trigger!!!'
-    echo 'Github Hook!'
-    echo 'another message'
-    echo 'hope this can fix this'
-    echo 'an other message'
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying..'
+            }
+        }
+    }
 }
