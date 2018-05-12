@@ -3,4 +3,5 @@ node {
     echo 'Github Hook!'
     echo 'another message'
     echo 'hope this can fix this'
+    echo 'an other message'
 }
