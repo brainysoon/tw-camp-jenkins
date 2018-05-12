@@ -5,15 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh 'make'
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                sh 'gradle build'
+                archiveArtifacts artifacts: '**/build/libs/*.jar', fingerprint: true
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh 'make check || true'
-                junit '**/target/*.xml'
+                sh 'gradle test || true'
             }
         }
         stage('Deploy') {
@@ -24,7 +23,7 @@ pipeline {
             }
             steps {
                 echo 'Deploying..'
-                sh 'make publish'
+                sh 'gradle bootRun'
             }
         }
     }
