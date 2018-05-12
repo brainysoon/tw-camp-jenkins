@@ -25,6 +25,6 @@ public class HelloControllerTest {
         RequestBuilder requestBuilder = MockMvcRequestBuilders.get("/hello");
         MvcResult result = mockMvc.perform(requestBuilder).andReturn();
 
-        assertThat(result.getResponse().getContentAsString(), is("hello"));
+        assertThat(result.getResponse().getContentAsString(), is("hello jenkins"));
     }
 }
