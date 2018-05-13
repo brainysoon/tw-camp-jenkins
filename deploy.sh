@@ -1,5 +1,7 @@
 ./gradlew build
 
+pwd
+
 cp build/libs/2018-04-02-01-27-37-1522632457.jar docker/app.jar
 
 tar -czvf tw-camp-jenkins.tar.gz docker/
@@ -7,6 +9,8 @@ tar -czvf tw-camp-jenkins.tar.gz docker/
 scp -i ./stage_icusin_ubuntu ./tw-camp-jenkins.tar.gz root@stage.icusin.com:/home/
 
 chmod  400 ./stage_icusin_ubuntu
+
+ls -al
 
 ssh -i ./stage_icusin_ubuntu -o StrictHostKeyChecking=no root@stage.icusin.com << stage-icusin-remote
 
