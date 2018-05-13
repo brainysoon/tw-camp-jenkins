@@ -6,7 +6,7 @@ scp -i ./stage_icusin_ubuntu ./tw-camp-jenkins.tar.gz root@stage.icusin.com:/hom
 
 chmod  400 ./stage_icusin_ubuntu
 
-ssh -i ./stage_icusin_ubuntu -o StrictHostKeyChecking=no root@stage.icusin.com << stage-icusin-remote
+ssh -T -i ./stage_icusin_ubuntu -o StrictHostKeyChecking=no root@stage.icusin.com << stage-icusin-remote
 
 cd /home
 
