@@ -16,7 +16,6 @@ pipeline {
             }
         }
         stage('Deploy') {
-            agent 'docker'
             when {
                 expression {
                     currentBuild.result == null || currentBuild.result == 'SUCCESS'
