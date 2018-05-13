@@ -20,7 +20,7 @@ public class HelloControllerApiTest {
     @Test
     public void shouldSayAnotherHelloWorld() {
         String result = restTemplate.getForObject("/hello", String.class);
-        assertEquals("hello docker", result);
+        assertEquals("hello the final step", result);
     }
 
 }
