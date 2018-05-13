@@ -19,7 +19,7 @@ cd docker
 
 docker build -t tw-camp-jenkins .
 
-docker rm -f tw-camp-jenkins
+docker rm -f tw-camp
 
 docker run -d -p 4000:4000 --name='tw-camp' tw-camp-jenkins
 
