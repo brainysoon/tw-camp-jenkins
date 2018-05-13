@@ -4,7 +4,7 @@ tar -czvf tw-camp-jenkins.tar.gz docker/
 
 echo 'scp....'
 
-scp -i ./stage_icusin_ubuntu ./tw-camp-jenkins.tar.gz root@stage.icusin.com:/home/
+scp -T -i ./stage_icusin_ubuntu ./tw-camp-jenkins.tar.gz root@stage.icusin.com:/home/
 
 echo 'end scp...'
 
