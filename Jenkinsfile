@@ -5,14 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh './gradlew build'
+                sh './build.sh'
                 archiveArtifacts artifacts: '**/build/libs/*.jar', fingerprint: true
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh './gradlew test || true'
+                sh './test.sh'
             }
         }
         stage('Deploy') {
