@@ -1,4 +1,4 @@
-cp build/libs/tw-camp-jenkins-1.0.0.jar docker/app.jar
+cp build/libs/*.jar docker/app.jar
 
 tar -czvf tw-camp-jenkins.tar.gz docker/
 
