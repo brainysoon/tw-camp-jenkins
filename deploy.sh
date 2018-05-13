@@ -1,10 +1,16 @@
-cp build/libs/*.jar docker/app.jar
+cp build/libs/tw-camp-jenkins-1.0.0.jar docker/app.jar
 
 tar -czvf tw-camp-jenkins.tar.gz docker/
 
+echo 'scp....'
+
 scp -i ./stage_icusin_ubuntu ./tw-camp-jenkins.tar.gz root@stage.icusin.com:/home/
 
+echo 'end scp...'
+
 chmod  400 ./stage_icusin_ubuntu
+
+echo 'ssh...'
 
 ssh -T -i ./stage_icusin_ubuntu -o StrictHostKeyChecking=no root@stage.icusin.com << stage-icusin-remote
 
