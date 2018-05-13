@@ -1,15 +1,10 @@
-ssh -o stricthostkeychecking=no -i ./stage_icusin_ubuntu root@stage.icusin.com
+cd ..
+cp build/libs/2018-04-02-01-27-37-1522632457.jar docker/app.jar
 
-cd /home/icusin/depoma
+docker rmi -f tw-camp-jenkins
 
-rm -r -f tw-camp-jenkins
-
-git clone git@github.com:brainysoon/tw-camp-jenkins.git
-
-cd tw-camp-jenkins/docker
+cd docker
 
 docker build -t tw-camp-jenkins .
-
-docker rm -f tw-camp-jenkins
 
 docker run -p 4000:4000  tw-camp-jenkins
