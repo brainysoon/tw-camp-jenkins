@@ -1,24 +1,19 @@
-cp build/libs/tw-camp-jenkins-1.0.0.jar docker/app.jar
-
-tar -czvf tw-camp-jenkins.tar.gz docker/
-
-echo 'scp....'
-
-scp -T -i ./stage_icusin_ubuntu ./tw-camp-jenkins.tar.gz root@stage.icusin.com:/home/
-
-echo 'end scp...'
-
 chmod  400 ./stage_icusin_ubuntu
-
-echo 'ssh...'
 
 ssh -T -i ./stage_icusin_ubuntu -o StrictHostKeyChecking=no root@stage.icusin.com << stage-icusin-remote
 
 cd /home
 
-rm -r -f docker
+if [ ! -d "tw-camp-jenkins" ];then
+    git clone https://github.com/brainysoon/tw-camp-jenkins.git
+fi
 
-tar -zxvf tw-camp-jenkins.tar.gz
+cd tw-camp-jenkins
+git pull origin master
+
+./gradlew build
+
+cp build/libs/tw-camp-jenkins-1.0.0.jar docker/app.jar
 
 cd docker
 
