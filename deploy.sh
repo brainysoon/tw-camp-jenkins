@@ -13,6 +13,8 @@ git pull origin master
 
 ./gradlew build
 
+echo start copy
+
 cp build/libs/tw-camp-jenkins-1.0.0.jar docker/app.jar
 
 cd docker
