@@ -25,11 +25,6 @@ task wrapper(type: Wrapper) {
     gradleVersion = '3.0'
 }
 
-jar {
-    baseName = 'tw-camp-jenkins'
-    version = '1.0.0'
-}
-
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     testCompile("org.springframework.boot:spring-boot-starter-test")
